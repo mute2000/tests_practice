@@ -1,0 +1,8 @@
+# 忽略 Python 编译生成的 __pycache__ 目录
+**/__pycache__/
+# 忽略 .pyc 等编译后的字节码文件
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+

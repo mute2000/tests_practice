@@ -40,12 +40,33 @@
     - git remote add origin
     - git branch -M main
     - git push -u origin main
+  2. 上传遇见的问题
+      - warning: ----------------- SECURITY WARNING ----------------
+        warning: | TLS certificate verification has been disabled! |
+        warning: ---------------------------------------------------
+        warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+        （TLS证书警告）
+          - 解决方法git config --global http.sslverify true
+      - fatal: unable to access 'https://github.com/mute2000/tests_practice.git/': Failed to connect to github.com port 443 after 21070 ms: Couldn't connect to server
+      (连接问题)
+        - 解决方法
+          - 1. 生成密钥：ssh-keygen -t ed25519 -C"GitHub邮箱"
+          - 2. 把生成的密钥添加到GitHub账户中
+          - 3. 在执行git push
 
 ## vscode基础知识
 - 预览markdown文档：ctrl+shift+v
 - 查找.md文档的知识点：ctrl+shirt+f
 - 中英文切换：ctrl+shift+p,之后输入“configue display language”
 - 新建文件：crtl+N 新建文件，ctrl+s保存后命名
+- 上传github要删除_pycache_文件（因为它属于本地环境的临时缓存，不具备代码共享价值，而且不符合代码仓库的管理规范）
+  - 它是本地冗余文件，仅对你自己有用，无法公用
+  - 其他人运行代码会生成自己的该文件
+  - 保留不仅会增加空间体积而且有可能因为不同环境引发不必要的冲突
+  - 添加.gitignore文件可以解决这个问题
+  - 如果已经上传到GitHub
+    - （# 直接删除Git追踪的所有__pycache__下的文件：git rm -r --cached $(git ls-files | grep __pycache__)）
+    - 然后再次提交上传
 
 ## python基础知识
 - 用例编写规范

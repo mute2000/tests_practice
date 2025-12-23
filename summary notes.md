@@ -97,6 +97,11 @@
   - 注意：类中的函数叫方法，类中的方法无法自动运行，需要创建实例化类后进行调用
   - self是方法中的固定参数，第一个参数必须是self
 
+- 关键字
+  - yield
+  - pass（占位符）
+    - 作用：在语法上需要语句但暂时不需要执行任何逻辑时使用
+
 - 装饰符（给函数穿上件衣服，既保留了函数本身的功能，有添加了衣服的功能）
   - 本质：包装函数/类的函数
   - @pytest.mark.order(num)
@@ -104,11 +109,15 @@
     - 1.3.0版本
       - 不支持负数
       - 优先级：数字越小越先执行，最后是无标记
-  - @pytest.fixture
+  - @pytest.fixture()
+    - 作用：将这个用例方法名以参数的形式传到方法里
+    - 参数scope
+      - 作用：可以控制fixture的作用范围（优先级session > module > class > function）
 
 - 写代码时的报错
   - AssertionError：断言错误，assert语句判断为false时出现
   - PytestUnknownMarkWarning：pytest未知标记警告（因为安装了新版本的插件而使用了老版本代码不匹配导致的问题）
+  - NameErro：主动抛出的异常，用来模拟测试用例失败场景
       
 ## 游戏理解
   - 核心玩法
@@ -153,7 +162,7 @@
 
 - 有点懵
   - 类中的self
-  - @pytest.fixture()
+  - @pytest.fixture()   √
 
 - 待定
   - pytest运行参数中的-m 参数

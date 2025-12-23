@@ -1,7 +1,7 @@
 import pytest
 
-def test_secrch1(open):
-    print("test_secrch1")
+def test_search1(open):
+    print("test_search1")
     pass
 
 def test_search2(open):

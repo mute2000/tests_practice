@@ -1,1 +1,8 @@
-[]
+[
+  "pytest_cache/test_scope1.py::test_search2",
+  "pytest_cache/test_scope1.py::test_search3",
+  "pytest_cache/test_scope1.py::test_secrch1",
+  "pytest_cache/test_scope2.py::TestFunc::test_case1",
+  "pytest_cache/test_scope2.py::TestFunc::test_case2",
+  "pytest_cache/test_scope2.py::TestFunc::test_case3"
+]

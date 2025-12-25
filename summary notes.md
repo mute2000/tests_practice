@@ -122,15 +122,24 @@
       - 优先级：数字越小越先执行，最后是无标记
   - @pytest.fixture()
     - 作用：将这个用例方法名以参数的形式传到方法里
-    - 参数scope
+    - 参数scope(@pytest.fixture(scope="session"))
       - 作用：可以控制fixture的作用范围（优先级session > module > class > function）
     - 参数autouse(@pytest.fixture(autouse=True))
       - 作用：自动应用到所有测试方法中
       - 注意：这个参数下没有办法返回值给测试用例
-    - 参数params
+    - 参数params(@pytest.fixture(params=[1,2,3]))
       - 定义：pytest实现'参数化测试'的核心功能之一,用来给夹具传递多组测试数据，让依赖该夹具的测试函数自动执行多次
       - 作用：可以接受一个可迭代的对象，pytest会自动遍历这个对象的每个元素，把元素按参数传递给夹具函数，最终按组执行
-
+    - 参数parameterize
+      - 作用：把多组测试数据给同一个测试函数，让函数自动循环多次，每次用一组数据
+      - 可以使用多次装饰器来生成大量测试用例（离得近的先遍历）
+      - 语法：@pytest.mark.parametrize(self,参数名,参数值，indirect=False, ids=None, \, scope=None)
+        - self:这个是pytest内部某个类的方法，用的时候可以省略，作为装饰器使用，pytest会自动处理
+        - 参数名：必须是字符串
+        - 参数值：必须是可迭代对象
+        - indirect（默认False）：数据直接传给测试函数
+        - ids(默认None)：给每组测试数据起个名字，方便在测试结果中区分不同用例。ids的格式要用列表/元组，注意要与参数值一致
+        - \(位置参数分隔符):限制传参方法，\前面只能用位置传参，这是代码规则，写代码本来也是用的位置传参
 - 写代码时的报错
   - AssertionError：断言错误，assert语句判断为false时出现
   - PytestUnknownMarkWarning：pytest未知标记警告（因为安装了新版本的插件而使用了老版本代码不匹配导致的问题）
@@ -178,8 +187,8 @@
   - 全局环境作用于全部python项目，只适合通用工具，虚拟环境只作用于指定包，可以解决各个包用于不同版本，这样不会造成兼容性问题。
 
 - 不理解
-  - if __name__ == '_main_':
-     pytest.main()
+  - if __name__ == '_main_':    
+     pytest.main()    √
 
 - 有点懵
   - 类中的self
@@ -199,3 +208,4 @@
   - pytest结合requests实现接口测试
   - pytest结合selenium和appium实现自动化功能测试
   - pytest结合allure集成到Jenkins中可以实现持续集成
+  - 集成

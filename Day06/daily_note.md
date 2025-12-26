@@ -1,0 +1,14 @@
+# 今天笔记总结
+- parameterize源码
+- 装饰符@pytest.mark.parametrize
+    - 实现参数化
+    - 使用多个装饰器实现参数化
+        - 运行顺序
+- eval()函数
+- @pytest.mark.parametrize与@pytest.fixture实现参数化
+- 了解了YAML
+- 数据驱动
+    - pytest与yaml结合实现数据驱动
+    - yaml.safe_load()方法
+    - open函数
+- allure的下载安装和使用

@@ -8,7 +8,7 @@ def login(request):
     print(f"\n 登录:{user}")
     return "登录成功"
 
-# indirext=True
+# indirext=True:所有参数传给同名的fixture
 @pytest.mark.parametrize("login",test_data, indirect=True)
 def test_login(login):
     a = login

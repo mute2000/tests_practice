@@ -11,4 +11,4 @@
     - pytest与yaml结合实现数据驱动
     - yaml.safe_load()方法
     - open函数
-- allure的下载安装和使用
+- allure的下载安装和简单使用

@@ -1,0 +1,23 @@
+# 今日收获
+- 简单了解PageObject设计模式
+- 显式等待，隐式等待和强制等待的简单使用
+- web控件的定位元素的简单使用
+    - id
+        - selenium自带ID定位，可以通过元素ID属性进行定位
+        - driver.find_element(By.ID, "app")
+    - name
+    - xpath
+    - css_selector
+    - link
+    - class_name
+    - tag_name
+- selenium常用操作
+    - 输入(send_keys)，点击(click)，清除(clear)
+    - 关闭浏览器(quit)
+    - 获取元素属性(get_attribute)，坐标(location)，大小(size)
+    - 获取网页源代码(page_source)，刷新页面(refresh)
+    - 窗口
+        - 关闭窗口(close)
+        - 最小化窗口(minimize_window)
+        - 最大化窗口(maximize_window)
+        - 设置窗口大小(set_window_size())
